@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chartered: Book Tickets</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="location.png">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="location.png" alt="chartered Logo">
+                <h3 style="color: white;">Chartered</h3>
+            </div>
+            <ul class="nav-links">
+                <li><a href="first.html">Home</a></li>
+                <li><a href="booking.html">Ticket Booking</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+            <div class="logo">
+                <img src="distance.png" alt="Journey icon">
+            </div>
+        </nav>
+    </header>
+
+    <section class="form">
+        <br>
+        <form href="booking_done.php" method="POST">
+            <p style="font-size:large; text-align: center;">Kindly fill in the details</p>
+            <hr><br><br>
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname" required><br><br>
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname" required><br><br>
+            <label for="date">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required><br><br>
+            <p>Gender: </p>
+            <input type="radio" id="gender" name="gender" value="male">
+            <label for="male">Male&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input type="radio" id="gender" name="gender" value="female">
+            <label for="female">Female</label>
+            <br><br><br>
+            <label for="source">Source:</label>
+            <select name="source" id="source">
+                <option value="Vytilla">Vytilla</option>
+                <option value="Vaikom">Vaikom</option>
+                <option value="Kottayam">Kottayam</option>
+                <option value="Chengannur">Chengannur</option>
+            </select><br><br>
+            <label for="destination">Destination:</label>
+            <select name="destination" id="destination">
+                <option value="Vytilla">Vytilla</option>
+                <option value="Vaikom">Vaikom</option>
+                <option value="Kottayam">Kottayam</option>
+                <option value="Chengannur">Chengannur</option>
+            </select><br><br>
+            <label for="date">Date of Journey:</label>
+            <input type="date" id="doj" name="doj" required><br><br>
+            <label for="seats">Number of Seats:</label>
+            <input type="number" id="seats" name="seats" max="10"><br><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required><br><br>
+            <label for="address">Address:</label><br>
+            <textarea id="address" name="address" rows="4" cols="50"></textarea><br>
+            <input type="radio" id="tnc" name="tnc" required> I agree with all the terms and conditions.
+            <br><input type="reset" value="Reset">
+            <br><br>
+            <center><a class="cta-button"id="submit" href="booked.html">Confirm</a></center>
+            <br><br>
+        </form>
+    </section>
+
+    <footer>
+            <div class="footer-content">
+                <p>Contact Us:</p>
+                <p>Email: chartered@gmail.com</p>
+                <p>Phone: 8919423510</p>
+            </div>
+    </footer>
+</body>
+</html>

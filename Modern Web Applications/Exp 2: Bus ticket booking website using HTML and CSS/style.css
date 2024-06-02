@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+main {
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: #05206D;
+    padding: 30px;
+}
+
+nav {
+    display: flex; /* Display flex to align items in a row */
+    justify-content: space-between; /* Spreads items apart, pushing them to the ends */
+    align-items: center; /* Vertically center items */
+}
+
+
+a:hover{
+    color: #6689EF;
+}
+
+a:active{
+    color: #99A6CD;
+}
+
+.logo {
+    display: flex;
+    align-items: center; /* Vertically center items */
+}
+
+.logo img {
+    width: auto;
+    height: 50px;
+    margin-right: 20px; /* Add some spacing between image and text */
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+    font-size: 18.72px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+
+
+.home {
+    background-image: url("https://www.charteredbus.in/banner-aa25a75b4376f1541ca192d626a100670ab2161d22fbbdb87b6d5dab1b98c513.jpg");
+    height: 700px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: flex-start;
+    color: white;
+    text-align: center; 
+    font-size: larger;
+    padding-top: 20px;
+    padding-left: 60px;
+}
+
+.cta-button {
+    padding: 10px 20px; 
+    background-color: #007bff; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: inherit;
+    margin-top: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #05206D;
+    color: black;
+    padding: 10px;
+    text-align: center;
+
+}
+
+.footer-content {
+    margin-bottom: 5px;
+    font-size: 18.72px;
+    color: white;
+}
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+
+
+
+
+
+
+
+
+
+
