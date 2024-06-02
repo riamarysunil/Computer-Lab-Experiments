@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Array Sum and Bubble Sort</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+    }
+
+    .container {
+        text-align: center;
+        padding: 20px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type="text"] {
+        padding: 10px;
+        font-size: 16px;
+        width: 300px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    #output {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Array Sum and Bubble Sort</h1>
+    <label for="arrayInput">Enter array elements (comma-separated):</label><br>
+    <input type="text" id="arrayInput"><br><br>
+    <button onclick="calculate()">Calculate</button>
+    <div id="output"></div>
+</div>
+
+<script>
+    // Function to find the sum of an array
+    function findSum(array) {
+        let sum = 0;
+        for (let i = 0; i < array.length; i++) {
+            sum += array[i];
+        }
+        return sum;
+    }
+
+    // Function to perform Bubble Sort
+    function bubbleSort(array) {
+        let len = array.length;
+        for (let i = 0; i < len - 1; i++) {
+            for (let j = 0; j < len - 1 - i; j++) {
+                if (array[j] > array[j + 1]) {
+                    let temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                }
+            }
+        }
+        return array;
+    }
+
+    function calculate() {
+        let inputArray = document.getElementById('arrayInput').value.split(',').map(Number);
+        let sum = findSum(inputArray);
+        let sortedArray = bubbleSort(inputArray);
+
+        let outputDiv = document.getElementById('output');
+        outputDiv.innerHTML = "<p>Sum of the array: " + sum + "</p>";
+        outputDiv.innerHTML += "<p>Sorted array: " + sortedArray.join(', ') + "</p>";
+    }
+</script>
+
+</body>
+</html>
