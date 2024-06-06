@@ -1,0 +1,13 @@
+n = int(input("Enter number of nested listed needed: "))
+i = 1
+nested_list = []
+while(n > 0):
+  my_list = eval(input(f'Enter the list {i}: '))
+  nested_list.append(list(my_list))
+  i+=1
+  n-=1
+print(f'The nested list is: {nested_list}')
+print('\n')
+list1 = eval(input("Enter list 1: "))
+list2 = eval(input("Enter list 2: "))
+print(f'The contenated list is: {list(list1 + list2)}')
