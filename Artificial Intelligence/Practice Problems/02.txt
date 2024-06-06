@@ -1,0 +1,5 @@
+import numpy as np
+
+list1 = eval(input("Enter the list: "))
+arr = np.array(list1)
+print(f'The array generated is: {arr}')

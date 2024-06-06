@@ -1,0 +1,8 @@
+import numpy as np
+
+arr = ['Hello','Hi','Good Morning','Greetings']
+arr1 = np.array(arr, dtype = str)
+print(f'Capitalized: {np.char.capitalize(arr1)}')
+print(f'Uppercase: {np.char.upper(arr1)}')
+print(f'Lowercase: {np.char.lower(arr1)}')
+print(f'Titlecase: {np.char.title(arr1)}')

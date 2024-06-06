@@ -1,0 +1,5 @@
+import numpy as np
+
+arr = input("Enter an array: ")
+arr1 = arr[::-1]
+print(f'The reversed array is: {arr1}')
