@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<form id="registrationForm" onsubmit="return validateForm()">
+  <h2>Registration Form</h2>
+  <div class="form-control">
+    <label for="userId">User ID:</label>
+    <input type="text" id="userId" name="userId" required minlength="5" maxlength="12">
+    <span class="error-message" id="userIdError"></span>
+  </div>
+  <div class="form-control">
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required minlength="7" maxlength="12">
+    <span class="error-message" id="passwordError"></span>
+  </div>
+  <div class="form-control">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required pattern="[A-Za-z ]+">
+    <span class="error-message" id="nameError"></span>
+  </div>
+  <div class="form-control">
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address">
+  </div>
+  <div class="form-control">
+    <label for="country">Country:</label>
+    <select id="country" name="country" required>
+      <option value="">Select Country</option>
+      <option value="USA">USA</option>
+      <option value="UK">UK</option>
+      <option value="Canada">Canada</option>
+      <!-- Add more countries as needed -->
+    </select>
+    <span class="error-message" id="countryError"></span>
+  </div>
+  <div class="form-control">
+    <label for="zipCode">ZIP Code:</label>
+    <input type="text" id="zipCode" name="zipCode" required pattern="[0-9]+">
+    <span class="error-message" id="zipCodeError"></span>
+  </div>
+  <div class="form-control">
+    <label>Sex:</label>
+    <label><input type="radio" name="sex" value="male" required> Male</label>
+    <label><input type="radio" name="sex" value="female" required> Female</label>
+    <span class="error-message" id="sexError"></span>
+  </div>
+  <div class="form-control">
+    <label>Languages:</label>
+    <label><input type="checkbox" name="language" value="english"> English</label>
+    <label><input type="checkbox" name="language" value="nonEnglish"> Non-English</label>
+    <span class="error-message" id="languageError"></span>
+  </div>
+  <div class="form-control">
+    <label for="about">About:</label>
+    <textarea id="about" name="about" rows="4"></textarea>
+  </div>
+  <div class="form-control">
+    <input type="submit" value="Submit">
+  </div>
+  <span id="submissionMessage"></span>
+</form>
+<script src="script.js"></script>
+</body>
+</html>
