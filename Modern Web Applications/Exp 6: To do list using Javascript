@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>To-Do List</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    width: 60%;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+  }
+  
+  li input[type="checkbox"] {
+    margin-right: 10px;
+  }
+
+  li input[type="checkbox"]:checked + span {
+    text-decoration: line-through;
+    color: #999;
+  }
+  
+  li span {
+    flex: 1;
+  }
+  
+  li button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 5px;
+  }
+  
+  li button:hover {
+    background-color: #c82333;
+  }
+</style>
+</head>
+<body>
+<h1>To-Do List</h1>
+<div class="input-container">
+  <input type="text" id="task-input" placeholder="Enter task">
+  <button onclick="addTask()">Add Task</button>
+</div>
+<ul id="task-list"></ul>
+<script>
+  let tasks = [];
+
+  function renderTasks() {
+    const taskList = document.getElementById('task-list');
+    taskList.innerHTML = ''; 
+    tasks.forEach((task, index) => {
+      const taskItem = document.createElement('li');
+      taskItem.innerHTML = `
+        <input type="checkbox" ${task.completed ? 'checked' : ''} onchange="toggleCompleted(${index})">
+        <span>${task.description}</span>
+        <button onclick="editTask(${index})">Edit</button>
+        <button onclick="deleteTask(${index})">Delete</button>
+      `;
+      taskList.appendChild(taskItem);
+    });
+  }
+
+  function addTask() {
+    const inputField = document.getElementById('task-input');
+    const description = inputField.value.trim();
+    
+    if (description !== '') {
+      tasks.push({ description, completed: false });
+      renderTasks();
+      inputField.value = ''; // Clear input field after adding task
+    }
+  }
+
+  function toggleCompleted(index) {
+    tasks[index].completed = !tasks[index].completed;
+    renderTasks();
+  }
+
+  function deleteTask(index) {
+    tasks.splice(index, 1);
+    renderTasks();
+  }
+
+  function editTask(index) {
+    const newDescription = prompt("Enter new description:");
+    if (newDescription !== null) {
+      tasks[index].description = newDescription.trim();
+      renderTasks();
+    }
+  }
+
+  renderTasks();
+</script>
+</body>
+</html>
