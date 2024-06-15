@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Inserting Elements Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 20px;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .buttons {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .buttons button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .buttons button:hover {
+            background-color: #45a049;
+        }
+        .container {
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        p {
+            margin: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery Inserting Elements Example</h1>
+
+
+    <div class="buttons">
+        <button id="beforeBtn">.before()</button>
+        <button id="afterBtn">.after()</button>
+        <button id="prependBtn">.prepend()</button>
+        <button id="appendBtn">.append()</button>
+        <button id="resetBtn">Reset</button>
+    </div>
+
+
+    <div class="container">
+        <p>This is a sample paragraph.</p>
+    </div>
+
+
+    <script>
+        $(document).ready(function(){
+            var defaultContent = $(".container").html();
+
+
+            $("#beforeBtn").click(function(){
+                $(".container").before("<p>Inserted before the container.</p>");
+            });
+
+
+            $("#afterBtn").click(function(){
+                $(".container").after("<p>Inserted after the container.</p>");
+            });
+
+
+            $("#prependBtn").click(function(){
+                $(".container").prepend("<p>Prepended to the container.</p>");
+            });
+
+
+            $("#appendBtn").click(function(){
+                $(".container").append("<p>Appended to the container.</p>");
+            });
+
+
+            $("#resetBtn").click(function(){
+                $(".container").html(defaultContent);
+                $(".container").prevAll("p").remove();
+                $(".container").nextAll("p").remove();
+            });
+        });
+    </script>
+</body>
+</html>
